@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jevons 的 GitHub Pages 合集</title>
+  <!-- A responsive design meta tag ensures the page adapts to different device widths. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include the site-wide stylesheet. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>我的 GitHub Pages 合集</h1>
+    <div class="controls">
+      <!-- A text input for searching projects by name or description. -->
+      <input type="text" id="search-input" class="search-input" placeholder="搜索项目…" aria-label="搜索项目" />
+      <!-- A select element for filtering projects by topic. Options will be populated at runtime. -->
+      <select id="tag-filter" class="tag-filter" aria-label="过滤标签">
+        <option value="">全部分类</option>
+      </select>
+      <!-- A select element for choosing the sort order. -->
+      <select id="sort-order" class="sort-order" aria-label="排序顺序">
+        <option value="desc">最近更新优先</option>
+        <option value="asc">最早更新优先</option>
+      </select>
+    </div>
+  </header>
+  <main id="grid" class="grid"></main>
+  <!-- Template for project cards. This isn't rendered by itself but cloned by JavaScript. -->
+  <template id="card-template">
+    <div class="card">
+      <a class="card-link" target="_blank" rel="noopener noreferrer">
+        <div class="img-wrapper">
+          <img class="screenshot" alt="项目截图" loading="lazy" />
+        </div>
+        <h2 class="card-title"></h2>
+      </a>
+      <p class="card-desc"></p>
+      <div class="tags"></div>
+      <small class="update-date"></small>
+    </div>
+  </template>
+  <!-- Main JavaScript file to load data and handle interactions. -->
+  <script src="main.js"></script>
+</body>
+</html>
