@@ -28,7 +28,7 @@ jobs:
 
       - name: Generate projects list
         env:
-          GITHUB_USER: ${{ secrets.GITHUB_USER || vars.GITHUB_USER || '' }}
+          GITHUB_USER: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node scripts/generate-projects.js
