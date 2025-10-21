@@ -1,0 +1,12 @@
+{
+  "name": "pages-index",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jevons 的 GitHub Pages 聚合站点",
+  "scripts": {},
+  "dependencies": {
+    "@octokit/rest": "^20.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}
